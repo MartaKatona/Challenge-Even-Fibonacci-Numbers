@@ -10,6 +10,28 @@ function _sumFibs( maxFibValue ) {
 
   // do your work here
 
+  var startNumber2 = 1;
+  var startNumber1 = 0;
+  var number;
+  var evenFib = [];
+
+
+  while (maxFibValue >= 0){
+
+    number = startNumber2;
+    startNumber2 = startNumber2 + startNumber1;
+    startNumber1 = number;
+    maxFibValue--;
+    if (number%2 === 0) {
+      evenFib.push(number);
+    }
+    if (number >= maxFibValue) {
+      break;
+    }
+  }
+  for (var i = 0; i < evenFib.length; i++) {
+    sum += evenFib[i];
+  }
   return sum;
 }
 
